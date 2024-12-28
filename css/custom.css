@@ -347,3 +347,38 @@ h6::before {
   -ms-transform: scale(0.5);
   -o-transform: scale(0.5);
 }
+
+/* 浅色模式呼吸灯 */
+@keyframes huxi_light {
+  0% {
+    box-shadow: 0px 0px 1px 1px #FFD1DC; /* 浅粉 */
+  }
+  50% {
+    box-shadow: 0px 0px 10px 10px #FFC0CB; /* 粉红色 */
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #FFD1DC; /* 浅粉 */
+  }
+}
+
+/* 深色模式呼吸灯 */
+@keyframes huxi_dark {
+  0% {
+    box-shadow: 0px 0px 1px 1px #FFD1DC; /* 青紫色 */
+  }
+  50% {
+    box-shadow: 0px 0px 10px 10px #FFC0CB; /* 暗紫色 */
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #FFD1DC; /* 青紫色 */
+  }
+}
+
+/* 绑定到头像样式 */
+[data-theme="light"] .avatar-img {
+  animation: huxi_light 4s ease-in-out infinite;
+}
+
+[data-theme="dark"] .avatar-img {
+  animation: huxi_dark 4s ease-in-out infinite;
+}
